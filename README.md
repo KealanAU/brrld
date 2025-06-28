@@ -1,38 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-https://telescope.fyi/
-https://www.radix-ui.com/themes/docs/overview/getting-started
-## Getting Started
+# BRRLD Visual - Beach & Swell Forecasting
 
-First, run the development server:
+<div align="center">
+  <img src="/public/logo.svg" alt="BRRLD Logo" width="400" height="100" />
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+A modern, interactive beach and swell forecasting web application that provides real-time surf conditions, tidal data, and wind forecasts for surfers and beach enthusiasts.
+
+## 🌊 Features
+
+- **Interactive Beach Search**: Find and select beaches from an extensive database
+- **Swell Visualization**: Real-time swell height, direction, and period data with interactive charts
+- **Tidal Information**: High and low tide times with height predictions
+- **Wind Mapping**: Current wind conditions and forecasts
+- **Responsive Design**: Optimized for both desktop and mobile devices
+- **Interactive Maps**: Visual beach locations with Leaflet integration
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- pnpm (recommended package manager)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd brrld-visual
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   pnpm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+
+## 🎥 Demo
+
+<!-- TODO: Add demo video here -->
+<div align="center">
+  <video width="800" height="450" controls>
+    <source src="demo.webm" type="video/webm">
+    <source src="demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p><em>Demo video coming soon - showcasing the interactive features and data visualizations</em></p>
+</div>
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Charts**: D3.js for data visualization
+- **Maps**: Leaflet with React-Leaflet
+- **UI Components**: Radix UI Themes
+- **Data Parsing**: PapaParse for CSV handling
+- **Package Manager**: pnpm
+
+## 📊 Data Sources
+
+The application uses comprehensive beach and weather data including:
+- Beach details and characteristics
+- Storm Glass API data for swell and wind conditions
+- Tidal information and predictions
+- Real-time weather updates
+
+## 🏗️ Project Structure
+
+```
+src/
+├── app/                 # Next.js app router pages
+├── components/          # React components
+│   ├── BeachSearch.tsx  # Beach selection interface
+│   ├── Map.tsx         # Interactive map component
+│   ├── SwellVisualization.tsx  # Swell data charts
+│   ├── TidalVisualization.tsx  # Tide information
+│   └── WindVisualization.tsx   # Wind data display
+├── context/            # React context providers
+├── types/              # TypeScript type definitions
+└── utils/              # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `pnpm run dev` - Start development server with Turbopack
+- `pnpm run build` - Build for production
+- `pnpm run start` - Start production server
+- `pnpm run lint` - Run ESLint
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Deployment
 
-## Learn More
+The easiest way to deploy this Next.js app is using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
-To learn more about Next.js, take a look at the following resources:
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+**Built with ❤️ for the surfing community**
 

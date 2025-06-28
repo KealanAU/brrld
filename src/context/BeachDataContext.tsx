@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { BeachData, BeachDetails } from '@/types/beach';
 import { getBeachDetails, getStormGlassDetails, getTideDetails } from '@/utils/csvParser';
 
@@ -56,6 +56,7 @@ const BeachDataContext = createContext<BeachDataContextType | undefined>(undefin
 
 export function BeachDataProvider({ children, initialData }: BeachDataProviderProps) {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [beachData, setBeachData] = useState<BeachData | null>(initialData ?? null);
   const [allBeaches, setAllBeaches] = useState<BeachDetails[]>([]);
   const [isLoading, setIsLoading] = useState(!initialData);
@@ -245,6 +246,28 @@ export function BeachDataProvider({ children, initialData }: BeachDataProviderPr
     }
   };
 
+  // Custom setSelectedBeachId function that updates the URL
+  const handleSetSelectedBeachId = (id: number | null) => {
+    setSelectedBeachId(id);
+    
+    if (id && allBeaches.length > 0) {
+      const selectedBeach = allBeaches.find(beach => beach.beach_id === id);
+      if (selectedBeach) {
+        // Update URL with the selected beach
+        const params = new URLSearchParams(searchParams.toString());
+        params.set('beach', selectedBeach.beach_name);
+        router.push(`?${params.toString()}`);
+      }
+    } else {
+      // Remove beach parameter from URL if no beach is selected
+      const params = new URLSearchParams(searchParams.toString());
+      params.delete('beach');
+      params.delete('beachName');
+      params.delete('beachId');
+      router.push(`?${params.toString()}`);
+    }
+  };
+
   return (
     <BeachDataContext.Provider 
       value={{ 
@@ -256,7 +279,7 @@ export function BeachDataProvider({ children, initialData }: BeachDataProviderPr
         noDataError,
         refreshData,
         selectedBeachId,
-        setSelectedBeachId
+        setSelectedBeachId: handleSetSelectedBeachId
       }}
     >
       {children}
