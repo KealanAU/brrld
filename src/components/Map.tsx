@@ -63,10 +63,21 @@ const MapComponent = ({
       const L = (await import('leaflet')).default;
       const { MapContainer, TileLayer, Marker, Popup } = await import('react-leaflet');
       
-      // Custom SVG marker
+      // Custom SVG marker with multiple colors from BRRLD logo
       const svgIcon = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#FF0000">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <defs>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f253f" flood-opacity="0.3"/>
+            </filter>
+          </defs>
+          <!-- Main pin shape in orange -->
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" 
+                fill="#fb8501" stroke="#0f253f" stroke-width="0.5" filter="url(#shadow)"/>
+          <!-- Center dot in blue -->
+          <circle cx="12" cy="9" r="2.5" fill="#219fbd"/>
+          <!-- Inner highlight in light blue -->
+          <circle cx="11.5" cy="8.5" r="1" fill="#8ecbe6"/>
         </svg>
       `;
 

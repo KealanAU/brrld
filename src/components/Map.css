@@ -16,13 +16,13 @@
 }
 
 .leaflet-control-zoom {
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(15, 37, 63, 0.2);
   border-radius: 4px;
   background: white;
 }
 
 .leaflet-control-zoom a {
-  color: #000;
+  color: #0f253f;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
@@ -34,28 +34,16 @@
 }
 
 .leaflet-control-zoom-in {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .leaflet-control-zoom a:hover {
-  background-color: #f4f4f4;
+  background-color: #f8fafc;
+  color: #219fbd;
 }
 
-.custom-beach-icon {
-  background: none;
-  border: none;
-}
-
-.custom-beach-icon svg {
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
-}
-
-.custom-beach-icon:hover svg {
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
-  transform: scale(1.1);
-  transition: all 0.2s ease-in-out;
-}
-
+/* Consolidated marker styles */
+.custom-beach-icon,
 .custom-marker {
   display: flex;
   align-items: center;
@@ -64,11 +52,14 @@
   border: none;
 }
 
+.custom-beach-icon svg,
 .custom-marker svg {
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
-  transition: transform 0.2s ease;
+  filter: drop-shadow(0 2px 2px rgba(15, 37, 63, 0.2));
+  transition: all 0.2s ease-in-out;
 }
 
+.custom-beach-icon:hover svg,
 .custom-marker:hover svg {
+  filter: drop-shadow(0 4px 4px rgba(15, 37, 63, 0.3));
   transform: scale(1.1);
 } 
