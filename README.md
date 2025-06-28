@@ -45,15 +45,8 @@ A modern, interactive beach and swell forecasting web application that provides 
 
 ## 🎥 Demo
 
-<!-- TODO: Add demo video here -->
-<div align="center">
-  <video width="800" height="450" controls>
-    <source src="demo.webm" type="video/webm">
-    <source src="demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <p><em>Demo video coming soon - showcasing the interactive features and data visualizations</em></p>
-</div>
+[demo.webm](https://github.com/user-attachments/assets/4286724a-89ff-41af-a386-9ba28e926f13)
+
 
 ## 🛠️ Tech Stack
 
